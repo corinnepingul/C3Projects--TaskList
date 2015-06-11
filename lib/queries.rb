@@ -11,14 +11,15 @@ module TaskList
 
     def add_task(*args)
       # santitize/validate your arguments
-      name = args[0][:name] #the params hash is in an array called args
+      task_name = args[0][:name] #the params hash is in an array called args
+      task_description = args[0][:description]
+      task_completed_date = args[0][:completed_date]
       # prepare your statement
-      statement = "INSERT INTO task_list (name, description, completed_date) values("");"
+      statement = "INSERT INTO task_list (name, description, completed_date) values('#{task_name}', '#{task_description}', '#{task_completed_date}');"
 
+      query!(statement)
       # call `query!` to interact with the database
       # determine what should be returned
-
-
     end
 
     # def santitize(*args)

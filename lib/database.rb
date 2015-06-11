@@ -7,7 +7,6 @@ module TaskList
     def initialize(database_name)
       @database_name = "db/#{ database_name }"
     end
-
   
 
     private
