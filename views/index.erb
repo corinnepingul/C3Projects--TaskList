@@ -1,1 +1,13 @@
-<h1>HI.</h1>
+<form action="" method="post" accept-charset="utf-8">
+  <fieldset>
+    <legend>Task List</legend>
+    <label>Task Name<input type="text" name="name" value="" id="name"></label>
+    <label>Description<input type="text" name="description" value="" id="description"></label>
+    <label>Completed Date<input type="text" name="completed_date" value="" id="completed_date"></label>
+  </fieldset>
+  <input type="submit" value="Add Task">
+</form>
+
+<pre>
+  <%= params %>
+</pre>

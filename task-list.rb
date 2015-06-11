@@ -11,4 +11,10 @@ class MySite < Sinatra::Base
   get "/" do
     erb :index
   end
+
+  post "/" do
+    # TaskList::Queries.add_task(params)
+    erb :index
+  end
+
 end
