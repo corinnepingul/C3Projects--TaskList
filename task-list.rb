@@ -1,14 +1,13 @@
 require "sinatra"
 require "sinatra/reloader"
-
+require "./lib/queries"
 
 class MySite < Sinatra::Base
-  configure :development do
     register Sinatra::Reloader
-    also_reload "lib"
-  end
 
   get "/" do
+    new_query = TaskList::Queries.new("tasklist.db")
+    @all_tasks = new_query.show_all_tasks
     erb :index
   end
 
