@@ -6,6 +6,7 @@ db.execute "CREATE TABLE task_list
   (id INTEGER PRIMARY KEY,
   name TEXT NOT NULL,
   description TEXT,
+  complete_by TEXT,
   completed_date TEXT);"
 
 db.close if db

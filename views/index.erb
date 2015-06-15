@@ -9,15 +9,27 @@
     <th>Task Number</th>
     <th>Task Name</th>
     <th>Description</th>
+    <th>Complete By</th>
     <th>Completed Date</th>
   </tr>
 
   <% @all_tasks.each_with_index do |task, index| %>
-    <tr class="rows">
+    <tr>
       <td><%= index + 1 %></td>
       <td><%= task[1] %></td>
       <td><%= task[2] %></td>
       <td><%= task[3] %></td>
+      <td><% if task[4] == "" %>
+            <form class="" action="index.html" method="post">
+              <label><input type="checkbox" name="#{index}" value="completed?">completed?</label>
+
+              <input type="submit" value="Add Completed Date">
+            </form>
+          <% else %>
+            <%= task[4] %>
+          <% end %>
+      </td>
+
     </tr>
   <% end %>
 
