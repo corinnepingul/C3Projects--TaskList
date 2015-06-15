@@ -10,6 +10,7 @@
     <th>Task Name</th>
     <th>Description</th>
     <th>Complete By</th>
+    <th>Complete</th>
     <th>Completed Date</th>
   </tr>
 
@@ -19,16 +20,18 @@
       <td><%= task[1] %></td>
       <td><%= task[2] %></td>
       <td><%= task[3] %></td>
-      <td><% if task[4] == "" %>
-            <form class="" action="index.html" method="post">
-              <label><input type="checkbox" name="#{index}" value="completed?">completed?</label>
-
-              <input type="submit" value="Add Completed Date">
-            </form>
-          <% else %>
-            <%= task[4] %>
-          <% end %>
+      <td>
+        <% if task[4] == "" %>
+          <form class="" action="" method="post">
+            <label><input type="text" name="completed_date" value="mm/dd/yy" id="completed_date"></label>
+            <input type="hidden" name="id" value="<%= index + 1 %>">
+            <input type="submit" value="Add completed date">
+          </form>
+        <% else %>
+            <%= "complete" %>
+        <% end %>
       </td>
+      <td><%= task[4] %></td>
 
     </tr>
   <% end %>

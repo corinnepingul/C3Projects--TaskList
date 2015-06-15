@@ -23,6 +23,17 @@ module TaskList
       # determine what should be returned
     end
 
+    def add_completed_date(*args)
+      task_id = args[0][:id]
+      task_completed_date = args[0][:completed_date]
+
+      statement = "UPDATE task_list SET completed_date='#{task_completed_date}' WHERE id='#{task_id}';"
+
+      query!(statement)
+
+    end
+
+
     # def santitize(*args)
     #
     # end

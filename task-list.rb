@@ -11,6 +11,13 @@ class MySite < Sinatra::Base
     erb :index
   end
 
+  post "/" do
+    new_query = TaskList::Queries.new("tasklist.db")
+    @completed_date = new_query.add_completed_date(params)
+    @all_tasks = new_query.show_all_tasks
+    erb :index
+  end
+
   get "/add_task" do
     erb :add_task
   end
